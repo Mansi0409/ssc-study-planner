@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack // Advanced SSC Study Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i> Edu<span>Track</span></a>
+            <ul class="nav-links">
+                <li><a href="#dashboard" class="active">Dashboard</a></li>
+                <li><a href="#subjects">Subjects</a></li>
+                <li><a href="#timetable">Timetable</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <span class="badge">BCA x SSC Prep Edition</span>
+            <h1>Master the Syllabus.<br>Track Your <span>Success.</span></h1>
+            <p>A premium, interactive environment engineered to streamline your competitive exam preparation, keep tasks organized, and visually measure daily progress.</p>
+            <a href="#dashboard" class="btn-primary">Go to Dashboard <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <main class="main-container" id="dashboard">
+        
+        <section class="progress-section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-chart-line"></i> Daily Momentum</h2>
+                <p>Complete tasks below to automatically boost your daily completion rate.</p>
+            </div>
+            <div class="progress-card">
+                <div class="progress-info">
+                    <span class="progress-label">Today's Target Completed</span>
+                    <span id="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" style="width: 0%;"></div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-num" id="tasks-done">0</span>
+                        <span class="stat-title">Done</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num" id="tasks-total">4</span>
+                        <span class="stat-title">Total Tasks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tasks-section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-list-check"></i> High Priority Action Items</h2>
+            </div>
+            <div class="tasks-grid">
+                <div class="task-card">
+                    <div class="task-meta">
+                        <span class="tag tag-maths">Maths</span>
+                        <span class="time"><i class="fa-regular fa-clock"></i> 90 mins</span>
+                    </div>
+                    <h3>Quantitative Aptitude</h3>
+                    <p>Solve 30 Advanced Geometry and Trigonometry questions from previous year papers.</p>
+                    <button class="btn-complete-task" onclick="toggleTask(this)">
+                        <i class="fa-regular fa-circle"></i> Mark Complete
+                    </button>
+                </div>
+                <div class="task-card">
+                    <div class="task-meta">
+                        <span class="tag tag-english">English</span>
+                        <span class="time"><i class="fa-regular fa-clock"></i> 45 mins</span>
+                    </div>
+                    <h3>Vocabulary & Comprehension</h3>
+                    <p>Revise 20 One-Word Substitutions, Idioms, and read an editorial article.</p>
+                    <button class="btn-complete-task" onclick="toggleTask(this)">
+                        <i class="fa-regular fa-circle"></i> Mark Complete
+                    </button>
+                </div>
+                <div class="task-card">
+                    <div class="task-meta">
+                        <span class="tag tag-reasoning">Reasoning</span>
+                        <span class="time"><i class="fa-regular fa-clock"></i> 60 mins</span>
+                    </div>
+                    <h3>Logical Reasoning</h3>
+                    <p>Practice Coding-Decoding sets and Syllogism mock puzzle variations.</p>
+                    <button class="btn-complete-task" onclick="toggleTask(this)">
+                        <i class="fa-regular fa-circle"></i> Mark Complete
+                    </button>
+                </div>
+                <div class="task-card">
+                    <div class="task-meta">
+                        <span class="tag tag-gk">General Knowledge</span>
+                        <span class="time"><i class="fa-regular fa-clock"></i> 60 mins</span>
+                    </div>
+                    <h3>General Awareness</h3>
+                    <p>Study Indian Polity (Fundamental Rights) and notes on current affairs.</p>
+                    <button class="btn-complete-task" onclick="toggleTask(this)">
+                        <i class="fa-regular fa-circle"></i> Mark Complete
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="subjects-section" id="subjects">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-book-bookmark"></i> Core Exam Pillars</h2>
+                <p>Comprehensive structured syllabus breakdowns.</p>
+            </div>
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <div class="subject-icon icon-maths"><i class="fa-solid fa-calculator"></i></div>
+                    <h3>Mathematics</h3>
+                    <p>Arithmetic, Algebra, Geometry, Mensuration, Trigonometry, Data Interpretation.</p>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon icon-english"><i class="fa-solid fa-font"></i></div>
+                    <h3>English Language</h3>
+                    <p>Grammar rules, Spotting Errors, Cloze Test, Synonyms & Antonyms, Comprehension.</p>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon icon-reasoning"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Reasoning</h3>
+                    <p>Analogies, Series, Blood Relations, Matrix, Non-Verbal Reasoning, Venn Diagrams.</p>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon icon-gk"><i class="fa-solid fa-earth-americas"></i></div>
+                    <h3>General Knowledge</h3>
+                    <p>History, Indian Polity, Economics, Physics, Chemistry, Biology, Current Affairs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="timetable-section" id="timetable">
+            <div class="section-header">
+                <h2><i class="fa-regular fa-calendar-days"></i> Optimal Dynamic Timetable</h2>
+                <p>Designed to balance academic requirements alongside focused competitive exam routines.</p>
+            </div>
+            <div class="table-responsive">
+                <table class="timetable">
+                    <thead>
+                        <tr>
+                            <th>Time Window</th>
+                            <th>Focus Slot</th>
+                            <th>Strategy Outline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time-col">07:00 AM - 08:30 AM</td>
+                            <td><span class="badge-table b-gk">GK & Current Affairs</span></td>
+                            <td>High retention phase. Focus on daily national items and core static facts.</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">09:30 AM - 11:30 AM</td>
+                            <td><span class="badge-table b-maths">Quantitative Aptitude</span></td>
+                            <td>Conceptual clarity building, core formula implementation, and speed drills.</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">02:00 PM - 03:30 PM</td>
+                            <td><span class="badge-table b-reasoning">Logical Reasoning</span></td>
+                            <td>Speed execution practice using sectional tests and high-speed problem-solving.</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">05:00 PM - 06:30 PM</td>
+                            <td><span class="badge-table b-english">English Comprehension</span></td>
+                            <td>Rule tracking, vocabulary mapping, and reading practice exercises.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 EduTrack. Developed for high-performance portfolio applications.</p>
+            <div class="footer-socials">
+                <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
